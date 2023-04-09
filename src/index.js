@@ -9,7 +9,7 @@ root.render(
       <div className="container">
           <div className="row">
                 <div className="col">
-                    <HelloWorld msg="Hello again!" />
+                    <HelloWorld msg="State using classes!" />
                 </div>
           </div>
       </div>

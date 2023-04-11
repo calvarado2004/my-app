@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect} from "react";
 import "./HelloWorld.css";
 
-function HelloWorld(props){
+function BasicApp(props){
 
     const [isTrue, setIsTrue] = React.useState(false);
     const [crowd, setCrowd] = React.useState([]);
@@ -60,4 +60,4 @@ function HelloWorld(props){
     )
 }
 
-export default HelloWorld;
+export default BasicApp;

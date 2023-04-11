@@ -5,6 +5,9 @@ function BasicApp(props){
 
     const [isTrue, setIsTrue] = React.useState(false);
     const [crowd, setCrowd] = React.useState([]);
+    const [firstName, setFirstName] = React.useState("");
+    const [lastName, setLastName] = React.useState("");
+    const [dob, setDob] = React.useState("");
 
     const toggleTrue = () => {
         if (isTrue){
@@ -47,6 +50,29 @@ function BasicApp(props){
             <a href="#!" className="btn btn-outline-secondary" onClick={toggleTrue}>Toggle isTrue</a>
 
             <hr/>
+
+            <hr/>
+
+            <form autoComplete="off">
+                <div className="mb-3">
+                    <label htmlFor="first-name" className="form-label">First Name</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="first-name"
+                        autoComplete="first-name-new"
+                        onChange={(event) => setFirstName(event.target.value)}
+                    />
+
+                </div>
+
+            </form>
+            <div>
+                <p>First Name: {firstName}</p>
+                <p>Last Name: {lastName} </p>
+                <p>Date of Birth: {dob}</p>
+            </div>
+
             <h3>People</h3>
             <ul className="list-group">
                 {crowd.map((person) => (

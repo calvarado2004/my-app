@@ -29,6 +29,13 @@ function BasicApp(props){
 
     }, []);
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log("Form submitted");
+        console.log("First Name: " + firstName);
+        console.log("Last Name: " + lastName);
+        console.log("Date of Birth: " + dob);
+    };
 
     return (
         <Fragment>
@@ -54,7 +61,7 @@ function BasicApp(props){
 
             <hr/>
 
-            <form autoComplete="off">
+            <form autoComplete="off" onSubmit={handleSubmit}>
 
                 <Input
                     title="First Name"
@@ -82,6 +89,8 @@ function BasicApp(props){
                     className="form-control"
                     onChange={(event) => setDob(event.target.value)}
                 ></Input>
+
+                <input type="submit" value="Submit" className="btn btn-primary" />
 
             </form>
             <div>

@@ -1,5 +1,6 @@
 import React, {Fragment, useEffect} from "react";
 import "./HelloWorld.css";
+import Input from "./Input";
 
 function BasicApp(props){
 
@@ -54,17 +55,33 @@ function BasicApp(props){
             <hr/>
 
             <form autoComplete="off">
-                <div className="mb-3">
-                    <label htmlFor="first-name" className="form-label">First Name</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="first-name"
-                        autoComplete="first-name-new"
-                        onChange={(event) => setFirstName(event.target.value)}
-                    />
 
-                </div>
+                <Input
+                    title="First Name"
+                    type="text"
+                    name="first-name"
+                    autoComplete="first-name-new"
+                    className="form-control"
+                    onChange={(event) => setFirstName(event.target.value)}
+                ></Input>
+
+                <Input
+                    title="Last Name"
+                    type="text"
+                    name="last-name"
+                    autoComplete="last-name-new"
+                    className="form-control"
+                    onChange={(event) => setLastName(event.target.value)}
+                ></Input>
+
+                <Input
+                    title="Date of Birth"
+                    type="date"
+                    name="dob"
+                    autoComplete="dob-new"
+                    className="form-control"
+                    onChange={(event) => setDob(event.target.value)}
+                ></Input>
 
             </form>
             <div>

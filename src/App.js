@@ -12,7 +12,7 @@ function BasicApp(props){
 
     // refs
 
-    const firstNameRef = React.useRef(null);
+    const firstNameRef = React.useRef();
     const lastNameRef = React.useRef(null);
     const dobRef = React.useRef(null);
 

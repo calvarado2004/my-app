@@ -10,6 +10,14 @@ function BasicApp(props){
     const [lastName, setLastName] = React.useState("");
     const [dob, setDob] = React.useState("");
 
+    // refs
+
+    const firstNameRef = React.useRef(null);
+    const lastNameRef = React.useRef(null);
+    const dobRef = React.useRef(null);
+
+
+
     const toggleTrue = () => {
         if (isTrue){
             setIsTrue(false);
@@ -56,6 +64,10 @@ function BasicApp(props){
         setLastName("");
         setDob("");
 
+        firstNameRef.current.value = "";
+        lastNameRef.current.value = "";
+        dobRef.current.value = "";
+
     }
 
     return (
@@ -90,6 +102,7 @@ function BasicApp(props){
                     name="first-name"
                     autoComplete="first-name-new"
                     className="form-control"
+                    ref={firstNameRef}
                     onChange={(event) => setFirstName(event.target.value)}
                 ></Input>
 
@@ -98,6 +111,7 @@ function BasicApp(props){
                     type="text"
                     name="last-name"
                     autoComplete="last-name-new"
+                    ref={lastNameRef}
                     className="form-control"
                     onChange={(event) => setLastName(event.target.value)}
                 ></Input>
@@ -107,6 +121,7 @@ function BasicApp(props){
                     type="date"
                     name="dob"
                     autoComplete="dob-new"
+                    ref={dobRef}
                     className="form-control"
                     onChange={(event) => setDob(event.target.value)}
                 ></Input>

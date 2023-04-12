@@ -35,7 +35,28 @@ function BasicApp(props){
         console.log("First Name: " + firstName);
         console.log("Last Name: " + lastName);
         console.log("Date of Birth: " + dob);
+
+        if ( lastName !== "" ){
+            addPerson(firstName, lastName, dob);
+        }
+
     };
+
+    const addPerson = (newFirstName, newLastName, newDob) => {
+        let newPerson = {id: crowd.length + 1, FirstName: newFirstName, LastName: newLastName, dob: newDob};
+        const newList = crowd.concat(newPerson);
+
+        const sortedList = newList.sort((a, b) => {
+            return a.LastName > b.LastName ? 1 : -1;
+        });
+
+        setCrowd(sortedList);
+
+        setFirstName("");
+        setLastName("");
+        setDob("");
+
+    }
 
     return (
         <Fragment>
